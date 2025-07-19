@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Private Message</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f6fc;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #container {
+      display: none;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      max-width: 600px;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    #passwordPrompt {
+      text-align: center;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 220px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="passwordPrompt">
+    <h2>🔒 Enter Password which you have used last time </h2>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <br>
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="errorMsg" class="error"></p>
+  </div>
+
+  <div id="container">
+    <h2>🌼 Message for You 🌼</h2>
+    <p>
+      Hey 😊 <br><br>
+
+      Aasha krto ki tu thik aschil sagal suralit chalu asel.<br><br>
+
+      Study vagire changla chalu asel, Bharat natyam che classes enjoy krt asachil.<br><br>
+
+      Mi pn thik aahe kalji krnya chi kahi garaj nhiye.<br><br>
+
+      Aaplya doghaana pn khup struggle kraych aahe. Life madhe successful hoych aahe. Gharchyanna proud moment deyche aahet kahi krun job milavla pahije.<br><br>
+
+      Life madhe kahi zaal tari haar n maanta tya vr ladhat rahaych aahe.<br><br>
+
+      Mi tuzya decision baddal samju shakto, tuze problem samju shakto. Mla tasa tula kahi pressure vagire deycha nhiye.<br><br>
+
+      Bgh, tula bolava vas vatal tr bolu shaktes – as friend ka asena.<br><br>
+
+      No expectations, no pressure. Mala kahi expectations nhiyet.<br><br>
+
+      Yevdh ch mhnen ki mistake zalyat pn tya peksha hi chaan moments enjoy kelele aahet, majja masti keleli aahe.<br><br>
+
+      Ts bolaych khup kahi aahe pn sadhya itakach...<br><br>
+
+      Tula bolavas vatal tr bolu shaktes, nhi vatal tr kahi harkat nhi.<br><br>
+
+      Swata chi kalji ghe aani khush raha.<br>
+      Be happy 😀
+    </p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const correctPassword = "3006";
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (input === correctPassword) {
+        document.getElementById("passwordPrompt").style.display = "none";
+        document.getElementById("container").style.display = "block";
+      } else {
+        errorMsg.textContent = "❌ The password you have used is wrong. Try again.";
+      }
+    }
+  </script>
+
+</body>
+</html>
